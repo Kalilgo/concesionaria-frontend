@@ -167,7 +167,7 @@ export default function FinanciamientoPage() {
                 </Link>
                 <a 
                   href="tel:+541112345678" 
-                  className="btn-secondary border-white/30 text-white hover:bg-white/10 flex items-center gap-2"
+                  className="btn-secondary-light flex items-center gap-2"
                 >
                   <Phone className="h-5 w-5" />
                   Llamar ahora

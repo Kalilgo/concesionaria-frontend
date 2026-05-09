@@ -28,7 +28,7 @@ export default function AdminVehiculosPage() {
     <div>
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-2xl font-bold">Vehículos</h1>
-        <Link href="/admin/autos/nuevo" className="bg-primary text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-primary-dark transition">
+        <Link href="/admin/autos/nuevo" className="bg-primary text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-primary-700 transition">
           <Plus className="h-5 w-5" /> Nuevo Vehículo
         </Link>
       </div>
@@ -44,7 +44,7 @@ export default function AdminVehiculosPage() {
                 <Link href={`/autos/${v.slug}`} className="flex-1 text-center bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200 transition text-sm">
                   Ver
                 </Link>
-                <Link href={`/admin/autos/${v.id}`} className="flex-1 text-center bg-primary text-white py-2 rounded-lg hover:bg-primary-dark transition text-sm">
+                <Link href={`/admin/autos/${v.id}`} className="flex-1 text-center bg-primary text-white py-2 rounded-lg hover:bg-primary-700 transition text-sm">
                   Editar
                 </Link>
                 <button onClick={() => handleDelete(v.id)} className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition text-sm">

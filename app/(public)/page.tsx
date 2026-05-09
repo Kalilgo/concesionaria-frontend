@@ -46,7 +46,7 @@ export default function HomePage() {
                 <Link href="/autos" className="btn-primary inline-flex items-center gap-2 text-base px-6 py-3.5">
                   Ver Catálogo <ArrowRight className="h-5 w-5" />
                 </Link>
-                <Link href="/contacto" className="btn-secondary inline-flex items-center gap-2 text-base px-6 py-3.5 border-white/30 text-white hover:bg-white/10">
+                <Link href="/contacto" className="btn-secondary-light inline-flex items-center gap-2 text-base px-6 py-3.5">
                   Contactar
                 </Link>
               </div>
@@ -294,7 +294,7 @@ export default function HomePage() {
                 <Link href="/autos" className="btn-primary text-base px-8 py-3.5">
                   Ver Catálogo Completo
                 </Link>
-                <Link href="/financiamiento" className="btn-secondary text-base px-8 py-3.5 border-white/30 text-white hover:bg-white/10">
+                <Link href="/financiamiento" className="btn-secondary-light text-base px-8 py-3.5">
                   Ver Financiación
                 </Link>
               </div>

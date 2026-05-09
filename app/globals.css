@@ -41,8 +41,12 @@ body {
     @apply bg-white text-primary border border-primary px-5 py-2.5 rounded-lg font-medium transition-all duration-200 hover:bg-primary-50 hover:shadow-lg active:scale-95;
   }
   
+  .btn-secondary-light {
+    @apply bg-transparent text-white border border-white/30 px-5 py-2.5 rounded-lg font-medium transition-all duration-200 hover:bg-white/10 active:scale-95;
+  }
+  
   .btn-accent {
-    @apply bg-accent text-white px-5 py-2.5 rounded-lg font-medium transition-all duration-200 hover:bg-accent-500 hover:shadow-lg active:scale-95;
+    @apply bg-accent text-white px-5 py-2.5 rounded-lg font-medium transition-all duration-200 hover:bg-accent-600 hover:shadow-lg active:scale-95;
   }
   
   .card {

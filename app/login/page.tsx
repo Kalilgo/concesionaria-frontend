@@ -80,7 +80,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={mutation.isPending}
-            className="w-full bg-primary text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-dark transition disabled:opacity-50"
+            className="w-full bg-primary text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-700 transition disabled:opacity-50"
           >
             <LogIn className="h-5 w-5" />
             {mutation.isPending ? 'Ingresando...' : 'Ingresar'}

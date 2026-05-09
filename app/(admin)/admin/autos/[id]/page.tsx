@@ -125,7 +125,7 @@ export default function EditarVehiculoPage() {
         </div>
 
         <div className="flex gap-4">
-          <button type="submit" disabled={mutation.isPending} className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition disabled:opacity-50">
+          <button type="submit" disabled={mutation.isPending} className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition disabled:opacity-50">
             {mutation.isPending ? 'Guardando...' : 'Actualizar'}
           </button>
           <button type="button" onClick={() => router.back()} className="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition">

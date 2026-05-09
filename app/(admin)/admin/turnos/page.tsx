@@ -33,7 +33,7 @@ export default function TurnosPage() {
     <div>
       <div className="flex justify-between items-center mb-8">
         <h1 className="text-2xl font-bold">Turnos</h1>
-        <button onClick={() => setShowForm(!showForm)} className="bg-primary text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-primary-dark transition">
+        <button onClick={() => setShowForm(!showForm)} className="bg-primary text-white px-4 py-2 rounded-lg flex items-center gap-2 hover:bg-primary-700 transition">
           <Plus className="h-5 w-5" /> Nuevo Turno
         </button>
       </div>
@@ -107,7 +107,7 @@ function AppointmentForm({ onClose, onSuccess }: { onClose: () => void; onSucces
         <input type="time" value={form.hora} onChange={(e) => setForm({ ...form, hora: e.target.value })} className="border rounded-lg px-3 py-2" required />
         <textarea placeholder="Comentarios" value={form.comentarios} onChange={(e) => setForm({ ...form, comentarios: e.target.value })} className="col-span-2 border rounded-lg px-3 py-2" />
         <div className="col-span-2 flex gap-4">
-          <button type="submit" disabled={mutation.isPending} className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition disabled:opacity-50">
+          <button type="submit" disabled={mutation.isPending} className="bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition disabled:opacity-50">
             {mutation.isPending ? 'Creando...' : 'Crear Turno'}
           </button>
           <button type="button" onClick={onClose} className="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-300 transition">Cancelar</button>

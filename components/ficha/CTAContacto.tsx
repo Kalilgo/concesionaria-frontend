@@ -74,7 +74,7 @@ export function CTAContacto({ vehicle }: Props) {
         <button
           type="submit"
           disabled={mutation.isPending}
-          className="w-full bg-primary text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-dark transition disabled:opacity-50"
+          className="w-full bg-primary text-white py-3 rounded-lg flex items-center justify-center gap-2 hover:bg-primary-700 transition disabled:opacity-50"
         >
           <Mail className="h-5 w-5" /> {mutation.isPending ? 'Enviando...' : 'Enviar Consulta'}
         </button>
