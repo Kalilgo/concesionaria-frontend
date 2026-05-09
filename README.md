@@ -50,17 +50,4 @@ cp .env.example .env.local
 npm run dev
 ```
 
-## Variables de Entorno
 
-```env
-NEXT_PUBLIC_API_URL=http://localhost:4000/api/v1
-NEXT_PUBLIC_WHATSAPP_NUMBER=5491112345678
-```
-
-## Deploy
-
-Recomendado: Vercel
-
-1. Conectar repo de GitHub
-2. Vercel detecta automáticamente Next.js
-3. Configurar NEXT_PUBLIC_API_URL apuntando al backend en Railway
