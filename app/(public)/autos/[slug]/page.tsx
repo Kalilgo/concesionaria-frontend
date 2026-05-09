@@ -47,7 +47,15 @@ export default function VehicleDetailPage() {
     );
   }
 
-  const imagenes = vehicle.imagenes || ['https://images.unsplash.com/photo-1494976388531-105120391436?w=800'];
+  let imagenes: string[] = [];
+  try {
+    imagenes = typeof vehicle.imagenes === 'string' ? JSON.parse(vehicle.imagenes) : vehicle.imagenes || [];
+  } catch {
+    imagenes = [];
+  }
+  if (!imagenes.length) {
+    imagenes = ['https://images.unsplash.com/photo-1494976388531-105120391436?w=800'];
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20 pb-12">
