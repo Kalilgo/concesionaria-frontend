@@ -73,7 +73,7 @@ export default function HomePage() {
                 <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6">
                   <div className="aspect-[4/3] relative rounded-2xl overflow-hidden">
                     <Image 
-                      src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800"
+                      src="https://images.unsplash.com/photo-1533473359761-8c4aad6c5d6d?auto=format&fit=crop&w=800&q=80"
                       alt="Auto destacado"
                       fill
                       className="object-cover"

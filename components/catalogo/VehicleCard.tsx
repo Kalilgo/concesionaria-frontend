@@ -20,7 +20,7 @@ export function VehicleCard({ vehicle }: Props) {
   } catch {
     imagenes = [];
   }
-  const imagen = imagenes[0] || 'https://images.unsplash.com/photo-1494976388531-105120391436?w=800';
+  const imagen = imagenes[0] || 'https://images.unsplash.com/photo-1533473359761-8c4aad6c5d6d?auto=format&fit=crop&w=800&q=80';
 
   return (
     <Link 
