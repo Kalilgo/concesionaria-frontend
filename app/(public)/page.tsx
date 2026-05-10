@@ -249,19 +249,19 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: 'Transparencia Total',
-                desc: 'Todos nuestros vehículos incluyen historial completo y certificación de calidad.',
+                title: 'Servicio Técnico',
+                desc: 'Contamos con taller propio para mantenimiento y reparaciones.',
                 icon: Shield,
               },
               {
-                title: 'Financiación a Medida',
-                desc: 'Te ayudamos a encontrar el mejor plan de financiación según tu perfil.',
-                icon: CreditCard,
+                title: 'Atención Personalizada',
+                desc: 'Te acompañamos en todo el proceso de compra.',
+                icon: Clock,
               },
               {
                 title: 'Soporte Post-Venta',
-                desc: 'Nuestro equipo te acompaña después de la compra para cualquier consulta.',
-                icon: Clock,
+                desc: 'Nuestro equipo te acompaña después de la compra.',
+                icon: CreditCard,
               },
             ].map(({ title, desc, icon: Icon }, i) => (
               <div 
@@ -294,8 +294,8 @@ export default function HomePage() {
                 <Link href="/autos" className="btn-primary text-base px-8 py-3.5">
                   Ver Catálogo Completo
                 </Link>
-                <Link href="/financiamiento" className="btn-secondary-light text-base px-8 py-3.5">
-                  Ver Financiación
+                <Link href="/contacto?servicio=soporte" className="btn-secondary-light text-base px-8 py-3.5">
+                  Solicitar Turno
                 </Link>
               </div>
             </div>

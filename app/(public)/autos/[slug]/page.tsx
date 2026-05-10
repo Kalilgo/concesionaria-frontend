@@ -5,7 +5,6 @@ import { useParams } from 'next/navigation';
 import { getVehicleBySlug } from '@/lib/api/vehicles';
 import { Galeria } from '@/components/ficha/Galeria';
 import { FichaTecnica } from '@/components/ficha/FichaTecnica';
-import { CalculadoraCuotas } from '@/components/ficha/CalculadoraCuotas';
 import { CTAContacto } from '@/components/ficha/CTAContacto';
 import { ArrowLeft, Share2, Heart, Star, Shield, Clock, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
@@ -150,11 +149,14 @@ export default function VehicleDetailPage() {
                 </p>
               </div>
 
-              <CTAContacto vehicle={vehicle} />
-              
-              <div className="mt-6 pt-6 border-t border-gray-100">
-                <CalculadoraCuotas precio={vehicle.precio} />
-              </div>
+<CTAContacto vehicle={vehicle} />
+               
+               <div className="mt-6 pt-6 border-t border-gray-100">
+                 <div className="bg-primary/5 rounded-xl p-4">
+                   <p className="font-medium text-gray-900">¿Necesitás ayuda?</p>
+                   <p className="text-sm text-gray-500 mt-1">Escribinos por cualquier consulta sobre este auto</p>
+                 </div>
+               </div>
             </div>
 
             <div className="bg-white rounded-2xl shadow-soft p-6">

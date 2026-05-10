@@ -16,8 +16,8 @@ export function Navbar() {
 
   const navLinks = [
     { href: '/autos', label: 'Autos' },
-    { href: '/financiamiento', label: 'Financiamiento' },
-    { href: '/contacto', label: 'Contacto' },
+    { href: '/contacto?servicio=turno', label: 'Turnos' },
+    { href: '/contacto?servicio=soporte', label: 'Soporte' },
   ];
 
   return (
