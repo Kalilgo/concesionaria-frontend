@@ -27,3 +27,20 @@ export function slugify(text: string): string {
     .replace(/--+/g, '-')
     .trim();
 }
+
+export function getColorHex(color: string): string {
+  const colors: Record<string, string> = {
+    'Blanco': '#FFFFFF',
+    'Negro': '#1a1a1a',
+    'Plata': '#C0C0C0',
+    'Gris': '#808080',
+    'Azul': '#3B82F6',
+    'Rojo': '#EF4444',
+    'Verde': '#10B981',
+    'Amarillo': '#F59E0B',
+    'Naranja': '#F97316',
+    'Beige': '#F5F5DC',
+    'Bordó': '#800020',
+  };
+  return colors[color] || '#808080';
+}

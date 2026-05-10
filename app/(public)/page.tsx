@@ -76,6 +76,7 @@ export default function HomePage() {
                       src="https://images.unsplash.com/photo-1533473359761-8c4aad6c5d6d?auto=format&fit=crop&w=800&q=80"
                       alt="Auto destacado"
                       fill
+                      priority
                       className="object-cover"
                     />
                     <div className="absolute bottom-0 left-0 right-0 gradient-overlay p-6">

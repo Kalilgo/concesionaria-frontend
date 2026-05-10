@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { formatPrecio } from '@/lib/utils';
+import { formatPrecio, getColorHex } from '@/lib/utils';
 import type { Vehicle } from '@/types';
 import { Gauge, Fuel, Settings, Star, Heart } from 'lucide-react';
 import { useState } from 'react';
@@ -32,6 +32,7 @@ export function VehicleCard({ vehicle }: Props) {
           src={imagen} 
           alt={`${vehicle.marca} ${vehicle.modelo}`} 
           fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         
@@ -108,21 +109,4 @@ export function VehicleCard({ vehicle }: Props) {
       </div>
     </Link>
   );
-}
-
-function getColorHex(color: string): string {
-  const colors: Record<string, string> = {
-    'Blanco': '#FFFFFF',
-    'Negro': '#1a1a1a',
-    'Plata': '#C0C0C0',
-    'Gris': '#808080',
-    'Azul': '#3B82F6',
-    'Rojo': '#EF4444',
-    'Verde': '#10B981',
-    'Amarillo': '#F59E0B',
-    'Naranja': '#F97316',
-    'Beige': '#F5F5DC',
-    'Bordó': '#800020',
-  };
-  return colors[color] || '#808080';
 }

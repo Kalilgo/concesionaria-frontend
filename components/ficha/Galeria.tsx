@@ -25,7 +25,7 @@ export function Galeria({ imagenes }: Props) {
   return (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden">
       <div className="relative h-96">
-        <Image src={images[current]} alt="Vehicle" fill className="object-cover" />
+        <Image src={images[current]} alt="Vehicle" fill sizes="(max-width: 1024px) 100vw, 66vw" className="object-cover" />
         {images.length > 1 && (
           <>
             <button
@@ -47,7 +47,7 @@ export function Galeria({ imagenes }: Props) {
         <div className="flex gap-2 p-4 overflow-x-auto">
           {images.map((img, i) => (
             <button key={i} onClick={() => setCurrent(i)} className={`relative h-20 w-24 flex-shrink-0 rounded-lg overflow-hidden ${i === current ? 'ring-2 ring-primary' : ''}`}>
-              <Image src={img} alt={`Thumbnail ${i + 1}`} fill className="object-cover" />
+              <Image src={img} alt={`Thumbnail ${i + 1}`} fill sizes="96px" className="object-cover" />
             </button>
           ))}
         </div>
