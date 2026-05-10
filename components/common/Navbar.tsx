@@ -17,7 +17,6 @@ export function Navbar() {
   const navLinks = [
     { href: '/autos', label: 'Autos' },
     { href: '/contacto?servicio=turno', label: 'Turnos' },
-    { href: '/contacto?servicio=soporte', label: 'Soporte' },
   ];
 
   return (

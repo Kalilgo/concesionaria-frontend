@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { createInquiry } from '@/lib/api/inquiries';
-import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Calendar, Wrench, Car, HelpCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, MessageCircle, Calendar, Wrench, Car } from 'lucide-react';
 import { toast } from 'sonner';
 import Link from 'next/link';
 
@@ -36,12 +36,11 @@ export default function ContactoPage() {
 
   const servicios = [
     { id: 'turno', label: 'Turno Taller', icon: Calendar, desc: 'Solicitá un turno para service o reparación' },
-    { id: 'soporte', label: 'Soporte', icon: HelpCircle, desc: 'Tengo una consulta sobre mi vehículo' },
     { id: 'compra', label: 'Comprar Auto', icon: Car, desc: 'Quiero información sobre un auto' },
     { id: 'general', label: 'Otro', icon: MessageCircle, desc: 'Otra consulta' },
   ];
 
-  const servicioActual = servicios.find(s => s.id === servicio) || servicios[3];
+  const servicioActual = servicios.find(s => s.id === servicio) || servicios[2];
 
   return (
     <div className="min-h-screen pt-20">

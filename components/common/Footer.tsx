@@ -54,12 +54,6 @@ export function Footer() {
                   Turnos Taller
                 </Link>
               </li>
-              <li>
-                <Link href="/contacto?servicio=soporte" className="text-gray-400 hover:text-white transition flex items-center gap-2">
-                  <ArrowRight className="h-4 w-4" />
-                  Soporte
-                </Link>
-              </li>
             </ul>
           </div>
 
