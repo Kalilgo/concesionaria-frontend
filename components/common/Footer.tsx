@@ -49,15 +49,15 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/financiamiento" className="text-gray-400 hover:text-white transition flex items-center gap-2">
+                <Link href="/contacto?servicio=turno" className="text-gray-400 hover:text-white transition flex items-center gap-2">
                   <ArrowRight className="h-4 w-4" />
-                  Financiación
+                  Turnos Taller
                 </Link>
               </li>
               <li>
-                <Link href="/contacto" className="text-gray-400 hover:text-white transition flex items-center gap-2">
+                <Link href="/contacto?servicio=soporte" className="text-gray-400 hover:text-white transition flex items-center gap-2">
                   <ArrowRight className="h-4 w-4" />
-                  Contacto
+                  Soporte
                 </Link>
               </li>
             </ul>

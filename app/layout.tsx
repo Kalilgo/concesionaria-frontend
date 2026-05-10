@@ -7,8 +7,8 @@ const inter = Inter({ subsets: ['latin'] });
 const plusJakarta = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Concesionaria | Tu próximo auto está aquí',
-  description: 'Encontrá los mejores vehículos en nuestra concesionaria. Autos nuevos y usados con financiamiento flexible.',
+  title: 'AutoDrive | Concesionaria',
+  description: 'Encontrá los mejores vehículos en nuestra concesionaria. Amplio stock y servicio de taller propio.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

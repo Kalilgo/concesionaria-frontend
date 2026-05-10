@@ -2,8 +2,10 @@
   "name": "concesionaria-frontend",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev -p 3000",
-    "build": "next build",
+    "dev": "next dev -p 3000 --turbo",
+    "dev:legacy": "next dev -p 3000",
+    "clean": "rm -rf .next",
+    "build": "rm -rf .next && next build",
     "start": "next start",
     "lint": "next lint"
   },

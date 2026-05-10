@@ -3,7 +3,7 @@
 import { useQuery } from '@tanstack/react-query';
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Car, CreditCard, Shield, Clock, Star, MapPin, Phone, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Car, Shield, Clock, Star, MapPin, Phone, ChevronLeft, ChevronRight, Wrench, CheckCircle } from 'lucide-react';
 import { getVehicles } from '@/lib/api/vehicles';
 import { formatPrecio } from '@/lib/utils';
 import { VehicleCard } from '@/components/catalogo/VehicleCard';
@@ -39,7 +39,7 @@ export default function HomePage() {
               </h1>
               
               <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-xl">
-                Amplio stock de vehículos 0km y usados. Financiación flexible y el mejor servicio posventa.
+                Amplio stock de vehículos 0km y usados. Servicio de taller y soporte técnico.
               </p>
               
               <div className="flex flex-wrap gap-4">
@@ -92,7 +92,7 @@ export default function HomePage() {
                   </div>
                   
                   <div className="grid grid-cols-3 gap-4 mt-4">
-                    {['Stock disponible', 'Financiación', 'Garantía'].map((item, i) => (
+                    {['Stock disponible', 'Taller propio', 'Garantía'].map((item, i) => (
                       <div key={i} className="bg-white/5 rounded-xl p-3 text-center">
                         <p className="text-white text-sm font-medium">{item}</p>
                       </div>
@@ -110,9 +110,9 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {[
               { icon: Car, title: 'Amplio Stock', desc: 'Más de 100 vehículos', color: 'bg-blue-50 text-primary' },
-              { icon: CreditCard, title: 'Financiación', desc: 'Cuotas flexibles', color: 'bg-green-50 text-emerald-600' },
+              { icon: Wrench, title: 'Taller Propio', desc: 'Service y reparaciones', color: 'bg-green-50 text-emerald-600' },
               { icon: Shield, title: 'Garantía', desc: 'Cobertura total', color: 'bg-purple-50 text-purple-600' },
-              { icon: Clock, title: 'Atención', desc: 'Siempre disponibles', color: 'bg-orange-50 text-orange-600' },
+              { icon: Clock, title: 'Atención', desc: 'Sempre disponibles', color: 'bg-orange-50 text-orange-600' },
             ].map(({ icon: Icon, title, desc, color }, i) => (
               <div 
                 key={title} 
@@ -247,12 +247,7 @@ export default function HomePage() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: 'Servicio Técnico',
-                desc: 'Contamos con taller propio para mantenimiento y reparaciones.',
-                icon: Shield,
-              },
+{[
               {
                 title: 'Atención Personalizada',
                 desc: 'Te acompañamos en todo el proceso de compra.',
@@ -261,7 +256,7 @@ export default function HomePage() {
               {
                 title: 'Soporte Post-Venta',
                 desc: 'Nuestro equipo te acompaña después de la compra.',
-                icon: CreditCard,
+                icon: Wrench,
               },
             ].map(({ title, desc, icon: Icon }, i) => (
               <div 
