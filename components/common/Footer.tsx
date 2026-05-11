@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Car, Phone, Mail, MapPin, Clock, Facebook, Instagram, Twitter, Youtube, ArrowRight } from 'lucide-react';
+import { Car, Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -16,27 +16,14 @@ export function Footer() {
                 <Car className="h-6 w-6 text-white" />
               </div>
               <div>
-                <span className="font-bold text-xl text-white">AutoDrive</span>
+                <span className="font-bold text-xl text-white">GG Autos</span>
                 <p className="text-xs text-gray-400">Concesionaria</p>
               </div>
             </Link>
             <p className="text-gray-400 mb-6">
               Tu próximo auto está aquí. Calidad, confianza y el mejor servicio para vos.
             </p>
-            <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-primary transition">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-primary transition">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-primary transition">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="w-10 h-10 bg-white/5 rounded-lg flex items-center justify-center hover:bg-primary transition">
-                <Youtube className="h-5 w-5" />
-              </a>
-            </div>
+            
           </div>
 
           <div>
@@ -62,18 +49,18 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <span className="text-gray-400">Av. Libertador 1234<br />Buenos Aires, Argentina</span>
+                <span className="text-gray-400">Reconquista 61</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-primary flex-shrink-0" />
-                <a href="tel:+541112345678" className="text-gray-400 hover:text-white transition">
-                  +54 11 1234-5678
+                <a href="tel:+5491162004150" className="text-gray-400 hover:text-white transition">
+                  +54 9 11 6200-4150
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-primary flex-shrink-0" />
-                <a href="mailto:info@concesionaria.com" className="text-gray-400 hover:text-white transition">
-                  info@concesionaria.com
+                <a href="mailto:gomezukalil@gmail.com" className="text-gray-400 hover:text-white transition">
+                  gomezukalil@gmail.com
                 </a>
               </li>
             </ul>
@@ -85,22 +72,8 @@ export function Footer() {
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
                 <div className="text-gray-400">
-                  <p>Lunes - Viernes</p>
-                  <p className="text-white">9:00 - 18:00</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <div className="text-gray-400">
-                  <p>Sábados</p>
-                  <p className="text-white">9:00 - 13:00</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <Clock className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                <div className="text-gray-400">
-                  <p>Domingos</p>
-                  <p className="text-white">Cerrado</p>
+                  <p>Lunes - Sábados</p>
+                  <p className="text-white">8:00 - 18:00</p>
                 </div>
               </li>
             </ul>
@@ -109,7 +82,7 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400 text-sm">
-            © {currentYear} AutoDrive Concesionaria. Todos los derechos reservados.
+            © {currentYear} GG Autos. Todos los derechos reservados.
           </p>
           <div className="flex gap-6 text-sm">
             <a href="#" className="text-gray-400 hover:text-white transition">Términos y Condiciones</a>

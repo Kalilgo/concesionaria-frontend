@@ -26,11 +26,6 @@ export default function HomePage() {
         <div className="container-app relative z-10 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6">
-                <Star className="h-4 w-4 text-accent fill-accent" />
-                <span className="text-sm text-white/90">Más de 500 autos vendidos</span>
-              </div>
-              
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
                 Encontrá tu próximo{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-amber-400">
@@ -51,20 +46,7 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              <div className="flex items-center gap-8 mt-10 pt-10 border-t border-white/10">
-                <div>
-                  <p className="text-3xl font-bold text-white">500+</p>
-                  <p className="text-sm text-gray-400">Autos vendidos</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-white">50+</p>
-                  <p className="text-sm text-gray-400">Marcas</p>
-                </div>
-                <div>
-                  <p className="text-3xl font-bold text-white">98%</p>
-                  <p className="text-sm text-gray-400">Clientes satisfechos</p>
-                </div>
-              </div>
+              
             </div>
 
             <div className="relative hidden lg:block animate-slide-up animate-delay-200">
@@ -200,11 +182,11 @@ export default function HomePage() {
                     Contactar Ahora
                   </Link>
                   <a 
-                    href="tel:+541112345678" 
+                    href="tel:+5491162004150" 
                     className="inline-flex items-center gap-2 text-white font-medium hover:text-accent transition"
                   >
                     <Phone className="h-5 w-5" />
-                    +54 11 1234-5678
+                    +54 9 11 6200-4150
                   </a>
                 </div>
               </div>
@@ -217,7 +199,7 @@ export default function HomePage() {
                     </div>
                     <div>
                       <p className="text-white font-medium">Visítanos</p>
-                      <p className="text-white/70 text-sm">Av. Libertador 1234, CABA</p>
+                      <p className="text-white/70 text-sm">Reconquista 61</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-4">

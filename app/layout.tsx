@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'AutoDrive | Concesionaria',
+  title: 'GG Autos | Concesionaria',
   description: 'Encontrá los mejores vehículos en nuestra concesionaria. Amplio stock y servicio de taller propio.',
 };
 

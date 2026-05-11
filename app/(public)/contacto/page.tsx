@@ -92,7 +92,7 @@ export default function ContactoPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Dirección</h3>
-                      <p className="text-gray-600">Av. Libertador 1234, Buenos Aires, Argentina</p>
+                      <p className="text-gray-600">Reconquista 61</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -101,8 +101,8 @@ export default function ContactoPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Teléfono</h3>
-                      <p className="text-gray-600">+54 11 1234-5678</p>
-                      <a href="tel:+541112345678" className="text-primary text-sm hover:underline">
+                      <p className="text-gray-600">+54 9 11 6200-4150</p>
+                      <a href="tel:+5491162004150" className="text-primary text-sm hover:underline">
                         Llamar ahora
                       </a>
                     </div>
@@ -113,8 +113,7 @@ export default function ContactoPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900">Horario de Atención</h3>
-                      <p className="text-gray-600">Lun - Vie: 9:00 - 18:00</p>
-                      <p className="text-gray-600">Sábados: 9:00 - 13:00</p>
+                      <p className="text-gray-600">Lun - Sáb: 8:00 - 18:00</p>
                     </div>
                   </div>
                 </div>
@@ -124,7 +123,7 @@ export default function ContactoPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Otras formas de contactarnos</h3>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <a 
-                    href="https://wa.me/5491112345678" 
+                    href="https://wa.me/5491162004150" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 p-4 bg-green-50 rounded-xl hover:bg-green-100 transition"

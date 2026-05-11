@@ -40,7 +40,7 @@ export function Navbar() {
               </div>
             </div>
             <div className="hidden sm:block">
-              <span className="font-bold text-xl text-gray-900">AutoDrive</span>
+              <span className="font-bold text-xl text-gray-900">GG Autos</span>
               <p className="text-xs text-gray-500 -mt-0.5">Concesionaria</p>
             </div>
           </Link>
@@ -59,11 +59,11 @@ export function Navbar() {
 
           <div className="hidden md:flex items-center gap-3">
             <a 
-              href="tel:+541112345678" 
+              href="tel:+5491162004150" 
               className="flex items-center gap-2 text-gray-600 hover:text-primary transition-colors"
             >
               <Phone className="h-4 w-4" />
-              <span className="text-sm font-medium">+54 11 1234-5678</span>
+              <span className="text-sm font-medium">+54 9 11 6200-4150</span>
             </a>
             <Link 
               href="/login" 
@@ -105,11 +105,11 @@ export function Navbar() {
               ))}
               <div className="pt-2 border-t border-gray-200">
                 <a 
-                  href="tel:+541112345678" 
+href="tel:+5491162004150"
                   className="flex items-center gap-2 px-4 py-3 text-gray-700 font-medium"
                 >
                   <Phone className="h-5 w-5 text-primary" />
-                  <span>+54 11 1234-5678</span>
+                  <span>+54 9 11 6200-4150</span>
                 </a>
                 <Link 
                   href="/login" 
