@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { Car, Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
+import Image from 'next/image';
+import { Phone, Mail, MapPin, Clock, ArrowRight } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -12,8 +13,13 @@ export function Footer() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="bg-gradient-to-br from-primary to-primary-700 p-2.5 rounded-xl">
-                <Car className="h-6 w-6 text-white" />
+              <div className="relative h-14 w-14">
+                <Image 
+                  src="/uploads/logo/logo_gg_minimalista.svg" 
+                  alt="GG Autos" 
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
                 <span className="font-bold text-xl text-white">GG Autos</span>
