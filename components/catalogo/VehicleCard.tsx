@@ -91,7 +91,7 @@ export function VehicleCard({ vehicle }: Props) {
           href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola, me interesa el ${vehicle.marca} ${vehicle.modelo} ${vehicle.anio}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#20BD5A] text-white text-sm font-semibold py-2 px-3 rounded-lg transition mt-2 border-t border-gray-100"
+          className="flex items-center justify-center gap-2 w-full bg-[#3487F6] hover:bg-[#2978CC] text-white text-sm font-semibold py-2 px-3 rounded-lg transition mt-2 border-t border-gray-100"
           onClick={(e) => e.stopPropagation()}
         >
           <MessageCircle className="h-4 w-4" />
