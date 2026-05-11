@@ -6,6 +6,7 @@ import { formatPrecio, getColorHex } from '@/lib/utils';
 import type { Vehicle } from '@/types';
 import { Gauge, Fuel, Settings, Star, Heart } from 'lucide-react';
 import { useState } from 'react';
+import { ImageWithFallback } from '@/components/common/ImageWithFallback';
 
 interface Props {
   vehicle: Vehicle;
@@ -20,7 +21,7 @@ export function VehicleCard({ vehicle }: Props) {
   } catch {
     imagenes = [];
   }
-  const imagen = imagenes[0] || 'https://images.unsplash.com/photo-1533473359761-8c4aad6c5d6d?auto=format&fit=crop&w=800&q=80';
+  const imagen = imagenes[0] || '';
 
   return (
     <Link 
@@ -28,7 +29,7 @@ export function VehicleCard({ vehicle }: Props) {
       className="group block bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
     >
       <div className="relative aspect-[4/3] overflow-hidden">
-        <Image 
+        <ImageWithFallback 
           src={imagen} 
           alt={`${vehicle.marca} ${vehicle.modelo}`} 
           fill

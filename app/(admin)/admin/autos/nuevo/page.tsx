@@ -6,10 +6,13 @@ import { useRouter } from 'next/navigation';
 import { createVehicle } from '@/lib/api/vehicles';
 import { toast } from 'sonner';
 import type { CreateVehicleInput } from '@/types';
+import { useState } from 'react';
+import { ImagePlus, X } from 'lucide-react';
 
 export default function NuevoVehiculoPage() {
   const router = useRouter();
-  const { register, handleSubmit, formState: { errors } } = useForm<CreateVehicleInput>();
+  const { register, handleSubmit, formState: { errors }, setValue, watch } = useForm<CreateVehicleInput>();
+  const [imagenPrevia, setImagenPrevia] = useState<string | null>(null);
 
   const mutation = useMutation({
     mutationFn: createVehicle,
@@ -19,6 +22,24 @@ export default function NuevoVehiculoPage() {
     },
     onError: () => toast.error('Error al crear el vehículo'),
   });
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const base64 = reader.result as string;
+      setImagenPrevia(base64);
+      setValue('imagenes', [base64]);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const removeImage = () => {
+    setImagenPrevia(null);
+    setValue('imagenes', []);
+  };
 
   const onSubmit = (data: CreateVehicleInput) => mutation.mutate(data);
 
@@ -100,8 +121,24 @@ export default function NuevoVehiculoPage() {
         </div>
 
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">URL de Imágenes (una por línea)</label>
-          <textarea {...register('imagenes')} rows={3} placeholder="https://..." className="w-full border rounded-lg px-3 py-2" />
+          <label className="block text-sm font-medium text-gray-700 mb-1">Imagen del vehículo</label>
+          {imagenPrevia ? (
+            <div className="relative inline-block">
+              <img src={imagenPrevia} alt="Preview" className="h-32 w-auto rounded-lg border" />
+              <button type="button" onClick={removeImage} className="absolute -top-2 -right-2 bg-red-500 text-white p-1 rounded-full">
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+          ) : (
+            <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+              <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                <ImagePlus className="h-8 w-8 text-gray-400 mb-2" />
+                <p className="text-sm text-gray-500">Click para subir imagen</p>
+              </div>
+              <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
+            </label>
+          )}
+          <input type="hidden" {...register('imagenes')} />
         </div>
 
         <div className="flex gap-4">

@@ -62,7 +62,7 @@ export default function LoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               className="w-full border rounded-lg px-4 py-3"
-              placeholder="admin@concesionaria.com"
+              placeholder="gomezukalil@gmail.com"
               required
             />
           </div>
@@ -89,7 +89,7 @@ export default function LoginPage() {
 
         <div className="mt-6 text-center text-sm text-gray-500">
           <p>Credenciales de prueba:</p>
-          <p>admin@concesionaria.com / admin123</p>
+          <p>gomezukalil@gmail.com / 123</p>
         </div>
       </div>
     </div>

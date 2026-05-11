@@ -3,16 +3,18 @@
 import { useForm } from 'react-hook-form';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useParams, useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getVehicleById, updateVehicle } from '@/lib/api/vehicles';
 import { toast } from 'sonner';
 import type { CreateVehicleInput } from '@/types';
+import { ImagePlus, X } from 'lucide-react';
 
 export default function EditarVehiculoPage() {
   const params = useParams();
   const router = useRouter();
   const queryClient = useQueryClient();
   const { register, handleSubmit, formState: { errors }, setValue } = useForm<CreateVehicleInput>();
+  const [imagenPrevia, setImagenPrevia] = useState<string | null>(null);
 
   const { data: vehicle, isLoading } = useQuery({
     queryKey: ['vehicle', params.id],
@@ -27,8 +29,30 @@ export default function EditarVehiculoPage() {
           setValue(key as keyof CreateVehicleInput, (vehicle as any)[key]);
         }
       });
+      const imagenes = vehicle.imagenes;
+      if (imagenes && imagenes.length > 0) {
+        setImagenPrevia(imagenes[0]);
+      }
     }
   }, [vehicle, setValue]);
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const base64 = reader.result as string;
+      setImagenPrevia(base64);
+      setValue('imagenes', [base64]);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const removeImage = () => {
+    setImagenPrevia(null);
+    setValue('imagenes', []);
+  };
 
   const mutation = useMutation({
     mutationFn: (data: Partial<CreateVehicleInput>) => updateVehicle(params.id as string, data),
@@ -111,6 +135,27 @@ export default function EditarVehiculoPage() {
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">Características</label>
           <textarea {...register('caracteristicas')} rows={2} className="w-full border rounded-lg px-3 py-2" />
+        </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Imagen del vehículo</label>
+          {imagenPrevia ? (
+            <div className="relative inline-block">
+              <img src={imagenPrevia} alt="Preview" className="h-32 w-auto rounded-lg border" />
+              <button type="button" onClick={removeImage} className="absolute -top-2 -right-2 bg-red-500 text-white p-1 rounded-full">
+                <X className="h-4 w-4" />
+              </button>
+            </div>
+          ) : (
+            <label className="flex flex-col items-center justify-center w-full h-32 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:bg-gray-50">
+              <div className="flex flex-col items-center justify-center pt-5 pb-6">
+                <ImagePlus className="h-8 w-8 text-gray-400 mb-2" />
+                <p className="text-sm text-gray-500">Click para subir imagen</p>
+              </div>
+              <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} />
+            </label>
+          )}
+          <input type="hidden" {...register('imagenes')} />
         </div>
 
         <div className="flex gap-4">
