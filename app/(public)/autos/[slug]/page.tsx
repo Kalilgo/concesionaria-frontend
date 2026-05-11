@@ -3,11 +3,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { useParams } from 'next/navigation';
 import { getVehicleBySlug } from '@/lib/api/vehicles';
-import { getColorHex } from '@/lib/utils';
+import { getColorHex, formatPrecio } from '@/lib/utils';
 import { Galeria } from '@/components/ficha/Galeria';
 import { FichaTecnica } from '@/components/ficha/FichaTecnica';
 import { CTAContacto } from '@/components/ficha/CTAContacto';
-import { ArrowLeft, Share2, Heart, Star, Shield, Clock, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Share2, Heart, Star, Shield, Clock, CheckCircle, Calendar, Gauge, Fuel, Settings } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -78,6 +78,7 @@ export default function VehicleDetailPage() {
                   <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
                     {vehicle.modelo} {vehicle.anio}
                   </h1>
+                  <p className="text-3xl font-bold text-primary mt-2">{formatPrecio(vehicle.precio)}</p>
                 </div>
                 <div className="flex items-center gap-2">
                   <button 
@@ -99,22 +100,34 @@ export default function VehicleDetailPage() {
                 </div>
               )}
 
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-gray-900">{vehicle.anio}</p>
-                  <p className="text-sm text-gray-500">Año</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8">
+                <div className="bg-gray-50 rounded-xl p-4 flex flex-col items-start justify-center">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Calendar className="h-4 w-4 text-primary" />
+                    <p className="text-xs font-medium text-primary uppercase tracking-wide">Año</p>
+                  </div>
+                  <p className="text-xl font-bold text-gray-900">{vehicle.anio}</p>
                 </div>
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-gray-900">{vehicle.kilometros.toLocaleString()}</p>
-                  <p className="text-sm text-gray-500">Kilómetros</p>
+                <div className="bg-gray-50 rounded-xl p-4 flex flex-col items-start justify-center">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Gauge className="h-4 w-4 text-primary" />
+                    <p className="text-xs font-medium text-primary uppercase tracking-wide">Kilometraje</p>
+                  </div>
+                  <p className="text-xl font-bold text-gray-900">{vehicle.kilometros.toLocaleString()} km</p>
                 </div>
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-gray-900">{vehicle.combustible}</p>
-                  <p className="text-sm text-gray-500">Combustible</p>
+                <div className="bg-gray-50 rounded-xl p-4 flex flex-col items-start justify-center">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Fuel className="h-4 w-4 text-primary" />
+                    <p className="text-xs font-medium text-primary uppercase tracking-wide">Combustible</p>
+                  </div>
+                  <p className="text-xl font-bold text-gray-900">{vehicle.combustible}</p>
                 </div>
-                <div className="bg-gray-50 rounded-xl p-4 text-center">
-                  <p className="text-2xl font-bold text-gray-900">{vehicle.transmision}</p>
-                  <p className="text-sm text-gray-500">Transmisión</p>
+                <div className="bg-gray-50 rounded-xl p-4 flex flex-col items-start justify-center">
+                  <div className="flex items-center gap-2 mb-1">
+                    <Settings className="h-4 w-4 text-primary" />
+                    <p className="text-xs font-medium text-primary uppercase tracking-wide">Transmisión</p>
+                  </div>
+                  <p className="text-xl font-bold text-gray-900">{vehicle.transmision}</p>
                 </div>
               </div>
 
@@ -142,8 +155,8 @@ export default function VehicleDetailPage() {
             <div className="bg-white rounded-2xl shadow-soft p-6 sticky top-24">
               <div className="text-center mb-6">
                 <p className="text-sm text-gray-500 mb-1">Precio</p>
-                <p className="text-4xl font-bold text-primary">
-                  ${vehicle.precio.toLocaleString('es-AR')}
+                <p className="text-3xl md:text-4xl font-bold text-primary break-words">
+                  ${vehicle.precio.toLocaleString('es-AR')} <span className="text-lg text-gray-500 font-normal">ARS</span>
                 </p>
               </div>
 

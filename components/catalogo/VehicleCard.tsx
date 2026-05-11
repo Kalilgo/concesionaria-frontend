@@ -1,12 +1,13 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
-import { formatPrecio, getColorHex } from '@/lib/utils';
+import { formatPrecio } from '@/lib/utils';
 import type { Vehicle } from '@/types';
-import { Gauge, Fuel, Settings, Star, Heart } from 'lucide-react';
+import { Star, Heart, MessageCircle } from 'lucide-react';
 import { useState } from 'react';
 import { ImageWithFallback } from '@/components/common/ImageWithFallback';
+
+const WHATSAPP_NUMBER = '5491162004150';
 
 interface Props {
   vehicle: Vehicle;
@@ -26,9 +27,9 @@ export function VehicleCard({ vehicle }: Props) {
   return (
     <Link 
       href={`/autos/${vehicle.slug}`} 
-      className="group block bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300"
+      className="group block bg-white rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-all duration-300"
     >
-      <div className="relative aspect-[4/3] overflow-hidden">
+      <div className="relative h-48 bg-gray-100 overflow-hidden">
         <ImageWithFallback 
           src={imagen} 
           alt={`${vehicle.marca} ${vehicle.modelo}`} 
@@ -37,16 +38,15 @@ export function VehicleCard({ vehicle }: Props) {
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
         
-        <div className="absolute top-3 left-3 flex flex-col gap-2">
+        <div className="absolute top-2 left-2 flex gap-1.5">
           {vehicle.destacado && (
-            <span className="bg-accent text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1">
-              <Star className="h-3 w-3 fill-white" />
-              Destacado
+            <span className="bg-[#3487F6] text-white text-[10px] font-bold px-2 py-0.5 rounded">
+              DESTACADO
             </span>
           )}
           {vehicle.kilometros === 0 && (
-            <span className="bg-success text-white text-xs font-semibold px-3 py-1.5 rounded-full">
-              0km
+            <span className="bg-[#00A650] text-white text-[10px] font-bold px-2 py-0.5 rounded">
+              0 KM
             </span>
           )}
         </div>
@@ -56,57 +56,47 @@ export function VehicleCard({ vehicle }: Props) {
             e.preventDefault();
             setIsLiked(!isLiked);
           }}
-          className="absolute top-3 right-3 p-2 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white transition shadow-md"
+          className="absolute top-2 right-2 p-1.5 bg-white/90 rounded-full hover:bg-white transition shadow-sm"
         >
-          <Heart className={`h-5 w-5 ${isLiked ? 'fill-red-500 text-red-500' : 'text-gray-400'}`} />
+          <Heart className={`h-4 w-4 ${isLiked ? 'fill-red-500 text-red-500' : 'text-gray-500'}`} />
         </button>
-
-        <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
-          <div className="flex items-center justify-between text-white">
-            <span className="text-lg font-bold">{formatPrecio(vehicle.precio)}</span>
-          </div>
-        </div>
       </div>
 
-      <div className="p-4">
-        <div className="flex items-start justify-between gap-2 mb-2">
-          <div>
-            <p className="text-sm text-primary font-medium">{vehicle.marca}</p>
-            <h3 className="font-bold text-gray-900 text-lg leading-tight">
-              {vehicle.modelo}
-            </h3>
-          </div>
-          <span className="text-sm text-gray-500 font-medium bg-gray-100 px-2 py-1 rounded-lg">
-            {vehicle.anio}
-          </span>
-        </div>
+      <div className="p-3">
+        <h3 className="font-bold text-gray-900 text-base leading-tight mb-1">
+          {vehicle.marca} {vehicle.modelo}
+        </h3>
+        
+        <p className="text-xl font-bold text-gray-900 mb-2">
+          {formatPrecio(vehicle.precio)}
+        </p>
 
-        <div className="flex items-center gap-3 text-sm text-gray-500 mt-3 mb-4">
-          <span className="flex items-center gap-1.5">
-            <Gauge className="h-4 w-4" />
-            {(vehicle.kilometros || 0).toLocaleString()} km
-          </span>
-          <span className="w-1 h-1 bg-gray-300 rounded-full" />
-          <span className="flex items-center gap-1.5">
-            <Fuel className="h-4 w-4" />
-            {vehicle.combustible}
-          </span>
-          <span className="w-1 h-1 bg-gray-300 rounded-full" />
-          <span className="flex items-center gap-1.5">
-            <Settings className="h-4 w-4" />
-            {vehicle.transmision}
-          </span>
+        <div className="flex flex-wrap items-center gap-2 text-sm text-gray-700 mb-2">
+          <span>{vehicle.anio}</span>
+          <span className="w-px h-4 bg-gray-300" />
+          <span>{vehicle.kilometros.toLocaleString()} km</span>
+          <span className="w-px h-4 bg-gray-300" />
+          <span>{vehicle.combustible}</span>
+          <span className="w-px h-4 bg-gray-300" />
+          <span>{vehicle.transmision}</span>
         </div>
 
         {vehicle.color && (
-          <div className="flex items-center gap-2 pt-3 border-t border-gray-100">
-            <div 
-              className="w-4 h-4 rounded-full border border-gray-200"
-              style={{ backgroundColor: getColorHex(vehicle.color) }}
-            />
-            <span className="text-sm text-gray-500">{vehicle.color}</span>
-          </div>
+          <p className="text-sm text-gray-500 mb-2">
+            Color: {vehicle.color}
+          </p>
         )}
+
+        <a
+          href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola, me interesa el ${vehicle.marca} ${vehicle.modelo} ${vehicle.anio}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#20BD5A] text-white text-sm font-semibold py-2 px-3 rounded-lg transition mt-2 border-t border-gray-100"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <MessageCircle className="h-4 w-4" />
+          Contactar al vendedor
+        </a>
       </div>
     </Link>
   );
